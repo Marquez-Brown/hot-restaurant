@@ -60,17 +60,17 @@ var tables = [
 //HTML ROUTES
 //ROUTE FOR HOME
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "home.html"));
+    res.sendFile(path.join(__dirname, "./views/home.html"));
   });
   
 //ROUTE FOR RESERVE
   app.get("/reserve", function(req, res) {
-    res.sendFile(path.join(__dirname, "reserve.html"));
+    res.sendFile(path.join(__dirname, "./views/reserve.html"));
   });
   
   //ROUTE FOR TABLES
   app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "tables.html"));
+    res.sendFile(path.join(__dirname, "./views/tables.html"));
   });
 
   app.get("/api/tables", function(req, res) {

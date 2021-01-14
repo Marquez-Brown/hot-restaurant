@@ -65,42 +65,32 @@ TWO BUTTONS
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </head>
   <body>
-   <section class="container">
-       <div class="row">
+    <section class="container">
+      <div class="row">
         <div class="jumbotron">
-            <h1 class="display-4" style="text-align: center;">Hot Restaurant</h1>
-            <p class="lead" style="text-align: center;">Book your seat before they are all gone!</p>
-            <hr class="my-4">
-            <a class="btn btn-primary btn-lg" href="./tables.html" role="button">View Tables</a>
-            <a class="btn btn-primary btn-lg" href="./reserve.html" role="button">Make Reservation</a>
-          </div>
-       </div>
-   </section>
+          <h1 class="display-4" style="text-align: center">Hot Restaurant</h1>
+          <p class="lead" style="text-align: center">
+            Book your seat before they are all gone!
+          </p>
+          <hr class="my-4" />
+          <a class="btn btn-primary btn-lg" href="./tables.html" role="button"
+            >View Tables</a
+          >
+          <a
+            class="btn btn-primary btn-lg"
+            href="./reserve.html"
+            role="button"
+            id="reserve-btn"
+            >Make Reservation</a
+          >
+        </div>
+      </div>
+    </section>
 
-   <script type="text/javascript">
-    $("#search-btn").on("click", function() {
-      var searchedCharacter = $("#character-search").val().trim();
-
-      // Using a RegEx Pattern to remove spaces from searchedCharacter
-      // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-      searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
-
-      $.get("/api/characters/" + searchedCharacter, function(data) {
-        console.log(data);
-        if (data) {
-          $("#stats").show();
-          $("#name").text(data.name);
-          $("#role").text(data.role);
-          $("#age").text(data.age);
-          $("#force-points").text(data.forcePoints);
-        } else {
-          $("#name").text(
-            "The force is not strong with this one. Your character was not found.");
-          $("#stats").hide();
-        }
+    <script type="text/javascript">
+      $("#reserve-btn").on("click", function () {
+        $.get("/reserve", function () {});
       });
-    });
-
-  </script>
+    </script>
   </body>
 </html>

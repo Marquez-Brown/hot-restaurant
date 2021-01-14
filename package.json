@@ -12,5 +12,14 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marquez-Brown/hot-restaurant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Marquez-Brown/hot-restaurant/issues"
+  },
+  "homepage": "https://github.com/Marquez-Brown/hot-restaurant#readme"
 }

@@ -23,33 +23,33 @@ var tables = [
       id: 2000
     },
     {
-        routeName: "yoda",
-        name: "Yoda",
-        role: "Jedi Master",
-        age: 900,
-        forcePoints: 2000
+        routeName: "table2",
+        name: "reservedtable2",
+        email: "xxx",
+        phone: 900,
+        id: 2000
       },
       {
-        routeName: "yoda",
-        name: "Yoda",
-        role: "Jedi Master",
-        age: 900,
-        forcePoints: 2000
+        routeName: "table3",
+        name: "reservedtable3",
+        email: "xxx",
+        phone: 900,
+        id: 2000
       },
-    {
-      routeName: "darthmaul",
-      name: "Darth Maul",
-      role: "Sith Lord",
-      age: 200,
-      forcePoints: 1200
-    },
-    {
-      routeName: "obiwankenobi",
-      name: "Obi Wan Kenobi",
-      role: "Jedi Master",
-      age: 55,
-      forcePoints: 1350
-    }
+      {
+        routeName: "table4",
+        name: "reservedtable4",
+        email: "xxx",
+        phone: 900,
+        id: 2000
+      },
+      {
+        routeName: "table5",
+        name: "reservedtable5",
+        email: "xxx",
+        phone: 900,
+        id: 2000
+      },
   ];
 // arrays of objets. objects should have 
 // name
@@ -64,16 +64,18 @@ app.get("/", function(req, res) {
   });
   
 //ROUTE FOR RESERVE
-  app.get("/add", function(req, res) {
+  app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
   });
   
   //ROUTE FOR TABLES
-  app.get("/add", function(req, res) {
+  app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
   });
 
-
+  app.get("/api/tables", function(req, res) {
+    return res.json(tables);
+  });
 
 
 
@@ -85,3 +87,6 @@ app.get("/", function(req, res) {
 //CREATE A TABLE/RESERVATION
 
 //listen on the port
+app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
